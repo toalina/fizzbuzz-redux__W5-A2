@@ -17,7 +17,7 @@ based on user input.
 * write method must clear the output target when writing new code
 * write method must also disply the start and end values
 * JavaScript must be written in an external file (just like you would for any other project)
-* Extra Credit: (10 pts) 
+* Extra Credit: (5 pts) 
   * give the user the option to append content (rather than replace it, which is the default behavior)
 
 ## Constraints
