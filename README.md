@@ -26,6 +26,8 @@ Must be valid, sematic, HTML. Don't worry about overall styling (though it never
 
 jQuery and external libraries are NOT to be used. All JavaScript should be your own.
 
+Work on this individually. Fork this repository and submit a pull-request back to it. Submit links via canvas.
+
 **DO NOT** fence yourself in with invisible constraints. Unless it is
 specifically listed and/or we discussed it in lecture, there is not an
 expectation to meet an objective that has not been set.
