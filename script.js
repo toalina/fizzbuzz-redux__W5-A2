@@ -1,91 +1,60 @@
 'use strict';
 
-// On FORM submit, this stuff happens
-// document.getElementById("form").submit();
+// var FizzBuzz = (
 
-function FizzBuzz() {
-  // Array with start number
-  var array = [x];
-  var x;
-  var y;
+  function FizzBuzz(startNum, endNum) {
+  this.startNum = startNum;
+  this.endNum = endNum;
+  this.result = [];
 
-  // Read method accept 2 values
-  // -- A start and an end
-  this.read = function(x, y) {
-    while (x < y) {
-      x++;
-      array.push(x);
-    }
-    console.log(array);
-    return array;
-  };
-
-  // Goes through the loop and does the fizzbuzz thing
-  this.assignWord = function() {
-    for (var i = 0; i < array.length; i++) {
-      if (array[i] % 3 === 0 && array[i] % 5 === 0) {
+  // Assign Fizz and Buzz words
+  // Display the words in HTML
+  // -- Same as this.write method?
+  this.read = function(startNum, endNum) {
+    for (var i = startNum; i <= endNum; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        this.result.push("FizzBuzz");
         console.log("FizzBuzz");
-      } else if (array[i] % 5 === 0) {
+      }
+      else if (i % 5 === 0) {
+        this.result.push("Buzz");
         console.log("Buzz");
-      } else if (array[i] % 3 === 0) {
+      }
+      else if (i % 3 === 0) {
+        this.result.push("Fizz");
         console.log("Fizz");
-      } else {
-       console.log(array[i]);
+      }
+      else {
+        this.result.push(i);
+        console.log(i);
       }
     }
-    return array;
   };
 
-  // Write method take the output of FizzBuzz program
-  // and inject into the HTML page
-  // Must clear output target when writing new code.
-  // Must display the start and end values
-  var output;
-
-  this.write = function() {
-
-
-    // Write the x and y
-    var elStart = document.getElementById("start");
-    elStart.textContent = x;
-    var elEnd = document.getElementById("end");
-    elEnd.textContent = y;
-    var elOutput = document.getElementById("output");
-    elOutput.textContent = array;
+  this.write = function(startNum, endNum) {
+    document.getElementById("start").innerHTML = startNum;
+    document.getElementById("end").innerHTML = endNum;
+    document.getElementById("output").innerHTML = this.result;
   };
 
-  // BONUS: User can append content
+  // return Fizzbuzz;
 
 }
+// )();
 
 var fizzbuzz = new FizzBuzz();
-fizzbuzz.read(2, 100);
-fizzbuzz.assignWord();
+fizzbuzz.read(34, 100);
 fizzbuzz.write();
 
 
-// FROM PREVIOUS HW
-for (var x = 1; x < 101; x++) {
-  if (x % 3 === 0 && x % 5 === 0) {
-    console.log("FizzBuzz");
-  } else if (x % 5 === 0) {
-    console.log("Buzz");
-  } else if (x % 3 === 0) {
-    console.log("Fizz");
-  } else {
-   console.log(x);
-  }
-}
+document.getElementById("submit").addEventListener("click", function(e) {
+  e.preventDefault();
 
-// FROM PREVIOUS HW
-function count (x, y) {
-  var array = [x];
-  while (x < y) {
-    x++;
-    array.push(x);
-  }
-  console.log(array);
-  return array;
-}
-count(2, 7);
-count(12, 17);
+  var startVal = document.getElementById("startVal").value; // input start value
+  var endVal = document.getElementById("endVal").value; // input end value
+  fizzbuzz.read(startVal, endVal);
+
+  console.log(startVal);
+  console.log(endVal);
+});
+
