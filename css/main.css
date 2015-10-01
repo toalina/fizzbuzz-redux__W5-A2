@@ -1,0 +1,10 @@
+body {
+  font-family: Helvetica;
+  text-align: center;
+}
+span {
+  padding: 0.2em;
+}
+p {
+  width: 20em;
+}
